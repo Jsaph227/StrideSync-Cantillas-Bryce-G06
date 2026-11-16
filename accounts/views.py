@@ -21,13 +21,13 @@ def dashboard_router(request):
 @login_required
 def admin_dashboard(request):
     if request.user.role != 'admin':
-        return redirect('dashboard_router') # Block unauthorized role access
+        return redirect('dashboard_router')
     return render(request, 'accounts/admin_dashboard.html')
 
 @login_required
 def customer_dashboard(request):
     if request.user.role != 'customer':
-        return redirect('dashboard_router') # Block unauthorized role access
+        return redirect('dashboard_router')
     return render(request, 'accounts/customer_dashboard.html')
 
 @login_required
